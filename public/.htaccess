@@ -1,0 +1,44 @@
+# Disable directory browsing
+Options -Indexes
+
+# ----------------------------------------------------------------------
+# Rewrite engine
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+
+    # If you installed CodeIgniter in a subfolder, you may need to set RewriteBase
+    # RewriteBase /test/public/
+
+    # Remove trailing slashes
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Rewrite "www.example.com -> example.com"
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+
+    # Send all requests to index.php except for actual files and directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L,NC,QSA]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 index.php
+</IfModule>
+
+
+<IfModule !mod_rewrite.c>
+	# If we don't have mod_rewrite installed, all 404's
+	# can be sent to index.php, and everything works as normal.
+	ErrorDocument 404 index.php
+</IfModule>
+
+# Disable server signature start
+ServerSignature Off
+# Disable server signature end
