@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'http://localhost/test/public';
+    public string $baseURL = 'http://localhost/traiteur_royale/public';
 
 
 
