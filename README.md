@@ -1,68 +1,58 @@
-# CodeIgniter 4 Application Starter
+# Système de Gestion des services de traiteur🍴
 
-## What is CodeIgniter?
+Ce projet est une application web de Gestion des services de traiteur qui permet aux administrateurs et aux clients d'interagir efficacement. Les fonctionnalités incluent la gestion des plats, des commandes et des utilisateurs.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 🚀 Fonctionnalités Principales
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+### Pour les Administrateurs :
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- **Gestion des Plats** :
+  - Ajouter, modifier ou supprimer des plats avec leurs détails (nom, description, prix, image, disponibilité).
+- **Gestion des Clients** :
+  - Afficher la liste des clients.
+  - Ajouter ou supprimer un client.
+- **Gestion des Commandes** :
+  - Afficher les commandes des clients.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+### Pour les Clients :
 
-## Installation & updates
+- **Compte Client** :
+  - Inscription et connexion.
+  - Modification des informations personnelles.
+- **Commande** :
+  - Parcourir les plats disponibles.
+  - Voir les détails d'un plat spécifique.
+  - Passer une commande avec plusieurs plats.
+  - Voir l'historique des commandes passées.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## 🛠️ Technologies Utilisées
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+- **Backend** : CodeIgniter 4 (Framework PHP)
+- **Frontend** : HTML5, CSS3, Tailwind CSS
+- **Base de Données** : MySQL
+- **Autres Outils** :
+  - Utilisation de sessions pour l'authentification.
+  - Gestion des routes simplifiée.
 
-## Setup
+## 📂 Architecture de la Base de Données
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+### Tables Principales :
+1. **Administrateurs** :
+   - Stocke les informations des administrateurs (id, nom, email, mot de passe).
+2. **Clients** :
+   - Contient les informations des clients (nom, prénom, email, téléphone, adresse, mot de passe).
+3. **Plats** :
+   - Gère les informations des plats (id, nom, description, prix, image, disponibilité).
+4. **Commandes** :
+   - Enregistre les commandes passées par les clients avec leur total.
+5. **Détails des Commandes** :
+   - Relie une commande à ses plats, avec des informations sur la quantité et le prix unitaire.
 
-## Important Change with index.php
+##IMANE
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+- **Serveur Web** : Apache
+- **PHP** : Version 8.0
+- **Base de Données** : MySQL
+- **Composer** : Pour gérer les dépendances PHP
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+   `
