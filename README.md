@@ -50,9 +50,5 @@ Ce projet est une application web de Gestion des services de traiteur qui permet
 
 ##IMANE
 
-- **Serveur Web** : Apache
-- **PHP** : Version 8.0
-- **Base de Données** : MySQL
-- **Composer** : Pour gérer les dépendances PHP
 
    `
